@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>C语言基础-基础入门 | 极光之歌</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="C语言简介C语言诞生于美国的贝尔实验室，由D.M.Ritchie以B语言为基础发展而来，在它的主体设计完成后，Thompson和Ritchie用它完全重写了UNIX，且随着UNIX的发展，c语言也得到了不断的完善。为了利于C语言的全面推广，许多专家学者和硬件厂商联合组成了C语言标准委员会，并在之后的1989年，诞生了第一个完备的C标准，简称“C89”，也就是“ANSI c”，截至2020年，最新的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言基础-基础入门">
+<meta property="og:url" content="https://www.springsongs.cn/2008/01/20/c-language-base/index.html">
+<meta property="og:site_name" content="极光之歌">
+<meta property="og:description" content="C语言简介C语言诞生于美国的贝尔实验室，由D.M.Ritchie以B语言为基础发展而来，在它的主体设计完成后，Thompson和Ritchie用它完全重写了UNIX，且随着UNIX的发展，c语言也得到了不断的完善。为了利于C语言的全面推广，许多专家学者和硬件厂商联合组成了C语言标准委员会，并在之后的1989年，诞生了第一个完备的C标准，简称“C89”，也就是“ANSI c”，截至2020年，最新的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.springsongs.cn/attachment/C/dataType.jpg">
+<meta property="og:image" content="https://www.springsongs.cn/attachment/C/ifcontroller.jpg">
+<meta property="og:image" content="https://www.springsongs.cn/attachment/C/ifelsecontroller.jpg">
+<meta property="og:image" content="https://www.springsongs.cn/attachment/C/muifelsecontroller.jpg">
+<meta property="og:image" content="https://www.springsongs.cn/attachment/C/whilecontroller.jpg">
+<meta property="og:image" content="https://www.springsongs.cn/attachment/C/dowhilecontroller.jpg">
+<meta property="og:image" content="https://www.springsongs.cn/attachment/C/forcontroller.jpg">
+<meta property="article:published_time" content="2008-01-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-16T11:02:03.614Z">
+<meta property="article:author" content="SpringSongs">
+<meta property="article:tag" content="C语言基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.springsongs.cn/attachment/C/dataType.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="极光之歌" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">极光之歌</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://www.springsongs.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-c-language-base" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2008/01/20/c-language-base/" class="article-date">
+  <time class="dt-published" datetime="2008-01-19T16:00:00.000Z" itemprop="datePublished">2008-01-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">C语言基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      C语言基础-基础入门
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="C语言简介"><a href="#C语言简介" class="headerlink" title="C语言简介"></a>C语言简介</h2><p>C语言诞生于美国的贝尔实验室，由D.M.Ritchie以B语言为基础发展而来，在它的主体设计完成后，Thompson和Ritchie用它完全重写了UNIX，且随着UNIX的发展，c语言也得到了不断的完善。为了利于C语言的全面推广，许多专家学者和硬件厂商联合组成了C语言标准委员会，并在之后的1989年，诞生了第一个完备的C标准，简称“C89”，也就是“ANSI c”，截至2020年，最新的C语言标准为2017年发布的 “C17”。<br>C语言之所以命名为C，是因为C语言源自Ken Thompson发明的B语言，而B语言则源自BCPL语言。</p>
+<p>C语言是一门面向过程的、抽象化的通用程序设计语言，广泛应用于底层开发。C语言能以简易的方式编译、处理低级存储器。C语言是仅产生少量的机器语言以及不需要任何运行环境支持便能运行的高效率程序设计语言。</p>
+<p>C语言很强大，所有其他语言能实现的功能，C语言都能实现。</p>
+<h2 id="“Hello-World-”示例"><a href="#“Hello-World-”示例" class="headerlink" title="“Hello World!”示例"></a>“Hello World!”示例</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello world\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>::: tip</p>
+<ol>
+<li>#include&lt;stdio.h&gt; 是一条预处理命令，用于告诉编译器在本程序中包含标准输入&#x2F;输出库的信息。</li>
+<li>main() 主函数方法是就是C语言中的唯一入口。int是main()方法返回的类型。</li>
+<li>printf(“hello world\n”) 调用了stdio.h文件的printf方法打印hello world。printf永远没有转行，\n为转行转义符。</li>
+<li>return 是函数的返回值，根据函数类型的不同，返回的值也是不同的。这里返回了int类型。<br>:::<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2>在程序中，由&#x2F;* *&#x2F;两个符号包括起来的部份是程序的注释。写注释能为其他人（包括自已）更容易明白你写的程序。也就是说程序是写给人看的，不是写给计算机看的。注释可以单独写一行或者也可以写多行。&#x2F;**&#x2F;不会被编译器所编译。C99新增了别一种风格注释，与C++，Java一至，使用&#x2F;&#x2F;来注释。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*这是一行注释*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*这是第一行注释</span></span><br><span class="line"><span class="comment">  这是第二行注释*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  这是一行注释</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//这是一行注释</span></span><br></pre></td></tr></table></figure>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><img src="/attachment/C/dataType.jpg" alt="SpringSongs：数据类型"><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3></li>
+</ol>
+<ul>
+<li><code>char</code> 字符型</li>
+<li><code>short</code> 短整型</li>
+<li><code>int</code> 整型</li>
+<li><code>long</code> 长整型</li>
+<li><code>float</code> 单精度浮点型</li>
+<li><code>double</code> 双精度浮点型</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;float.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">char</span>  _char=<span class="string">&#x27;A&#x27;</span>;<span class="comment">//定义变量</span></span><br><span class="line">    <span class="type">short</span> _short=<span class="string">&#x27;A&#x27;</span>;<span class="comment">//定义变量</span></span><br><span class="line">    <span class="type">int</span>   _int=<span class="number">1</span>;<span class="comment">//定义变量</span></span><br><span class="line">    <span class="type">long</span>  _long=<span class="number">1</span>;<span class="comment">//定义变量</span></span><br><span class="line">    <span class="type">float</span> _float=<span class="number">1.1f</span>;<span class="comment">//定义变量</span></span><br><span class="line">    <span class="type">double</span> _double=<span class="number">1.1</span>;<span class="comment">//定义变量</span></span><br><span class="line">    </span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;char 存储大小 : %lu \n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;char 最大值 : %d \n&quot;</span>,CHAR_MAX);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;char 最小值 : %d \n&quot;</span>,CHAR_MIN);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;short 存储大小 : %lu \n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">short</span>));</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;short 最大值 : %d \n&quot;</span>,SHRT_MAX);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;short 最小值 : %d \n&quot;</span>,SHRT_MIN);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;int 存储大小 : %lu \n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;int 最大值 : %d \n&quot;</span>,INT_MAX);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;int 最小值 : %d \n&quot;</span>,INT_MIN);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;long 存储大小 : %lu \n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">long</span>));</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;long 最大值 : %ld \n&quot;</span>,LONG_MAX);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;long 最小值 : %ld \n&quot;</span>,LONG_MIN);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;float 存储大小 : %lu \n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">float</span>));</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;float 最大值 : %f \n&quot;</span>,FLT_MAX);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;float 最小值 : %f \n&quot;</span>,FLT_MIN);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;double 存储大小 : %lu \n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;double 最大值 : %f \n&quot;</span>,DBL_MAX);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;double 最小值 : %f \n&quot;</span>,DBL_MIN);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>::: tip 提示<br>数据如数字、文字、符号、图形、音频、视频等数据都是以二进制形式存储在内存中的，它们并没有本质上的区别，是0与1的各种组成。<br>所以为了区分数据，就定义了数据类型。数据类型不仅提供了语法检法，还明确了变量所点用的内存空间，也就是字长。其实更为本质上是<br>CPU区分了不同的数据类型，不同的数据类型使用不同的运算器，比如CPU整型运算和CPU浮点运算。</p>
+<p>数据类型的长度与硬件特性有关，但要遵循以下规则，short和int类型至少为16位，而long至少为32位。现在个人计算法一般以32位存储一个int值。<br>::: </p>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%d &#x2F; %i</td>
+<td align="center">有符号十进制整数</td>
+</tr>
+<tr>
+<td>%u</td>
+<td align="center">无符号十进制整数</td>
+</tr>
+<tr>
+<td>%c</td>
+<td align="center">无符号 char</td>
+</tr>
+<tr>
+<td>%s</td>
+<td align="center">字符串</td>
+</tr>
+<tr>
+<td>%p</td>
+<td align="center">十六进制形式的指针</td>
+</tr>
+<tr>
+<td>%o</td>
+<td align="center">无符号八进制整数</td>
+</tr>
+<tr>
+<td>%x &#x2F; %X</td>
+<td align="center">无符号十六进制数</td>
+</tr>
+<tr>
+<td>%e</td>
+<td align="center">浮点数以指数格式e表示</td>
+</tr>
+<tr>
+<td>%E</td>
+<td align="center">浮点数以指数格式E表示</td>
+</tr>
+<tr>
+<td>%f</td>
+<td align="center">double 十进制格式的数字</td>
+</tr>
+<tr>
+<td>%g &#x2F; %G</td>
+<td align="center">double 取决于值的十进制格式或指数格式的数字</td>
+</tr>
+<tr>
+<td>%lu</td>
+<td align="center">32位无符号整数</td>
+</tr>
+<tr>
+<td>%llu</td>
+<td align="center">64位无符号整数</td>
+</tr>
+</tbody></table>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>C语言规定，标识符可以是字母(A～Z，a～z)、数字(0～9)、下划线_组成的字符串，并且第一个字符必须是字母或下划线。在使用标识符时还有注意以下几点</p>
+<ol>
+<li>由于库例程的名字通常以下划线开头，所以变量名不建议以划线开头。</li>
+<li>最好以见名知义的英文字母或者组合为变量，不能使用关键字做为变量名。</li>
+<li>变量名区分大小写，所以<code>springsongs</code>和<code>SpringSongs</code>是不同的变量名。</li>
+<li>符号常量名全部使用大写字母。<h2 id="变量及赋值"><a href="#变量及赋值" class="headerlink" title="变量及赋值"></a>变量及赋值</h2>计算机在进行运行运算时，数据是存在内存中的，在运算前我们要定义变量。这时侯定义变量要向内存申请一块内存空间，然后把变量值存进这块内存空间，<br>而这块内存空间的我们起一个好的名字，方便进行查找。通过这个变量，不用物理地址，我们可以对内存空间进行读写，操作系统会自动对变量进行地址分配。<br>在C语言中，可以通过指定数据类型和标识符来声明变量，其基本语法如下所示：</li>
+</ol>
+<p><code>DataType identifier;</code>或者<code>DataType identifier1,identifier2,identifier3...</code>;</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a;<span class="comment">//定义一个整型变量，并取名a</span></span><br><span class="line">    a = <span class="number">10</span>;<span class="comment">//给a并赋值为10</span></span><br><span class="line">    <span class="type">float</span> x, y, z;<span class="comment">//定三个浮点型变量，并取命x,y,z</span></span><br><span class="line">    x = <span class="number">1.1</span>;<span class="comment">//给x并赋值为1.1</span></span><br><span class="line">    y = <span class="number">1.2</span>;<span class="comment">//给y并赋值为1.2</span></span><br><span class="line">    z = <span class="number">1.3</span>;<span class="comment">//给z并赋值为1.3</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a);             <span class="comment">//打印a整型变量</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%f %f %f\n&quot;</span>, x, y, z); <span class="comment">//打印x,y,z浮点型变量</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>::: tip<br>在实例中，我们申请四块内存空间，并分别命名为a,x,y,z。当然你也可以给它们取别的名称。分号代表语句结束。<br>那定义好变量以后我们怎么把数据存进内存空间去呢。我们用‘&#x3D;’号给变量赋值。赋值就是把数据放进内存去。赋值有两中方法<br>一种是先声明再赋值，一种是声明的同时赋值。<code>DataType identifier=value;</code>或者<code>DataType identifier1=value1,identifier2=value2,identifier3=value3...</code>;<br>::: </p>
+<h4 id="实例声明的同时赋值"><a href="#实例声明的同时赋值" class="headerlink" title="实例声明的同时赋值"></a>实例声明的同时赋值</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> a=<span class="number">10</span>;<span class="comment">//定义一个整型变量，并取名a，并赋值为10</span></span><br><span class="line">    <span class="type">float</span> x=<span class="number">1.1</span>,y=<span class="number">1.2</span>,z=<span class="number">1.3</span>;<span class="comment">//定三个浮点型变量，并取命x,y,z，并分别赋值1.1,1.2,1.3</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);<span class="comment">//打印a整型变量</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%f %f %f\n&quot;</span>,x,y,z);<span class="comment">//打印x,y,z浮点型变量</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p>下表列出了 C 中的保留字。这些保留字不能作为常量名、变量名或其他标识符名称。</p>
+<table>
+<thead>
+<tr>
+<th>auto</th>
+<th align="center">break</th>
+<th align="center">case</th>
+<th align="center">char</th>
+<th align="center">const</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>continue</td>
+<td align="center">default</td>
+<td align="center">do</td>
+<td align="center">double</td>
+<td align="center">else</td>
+</tr>
+<tr>
+<td>enum</td>
+<td align="center">extern</td>
+<td align="center">float</td>
+<td align="center">for</td>
+<td align="center">goto</td>
+</tr>
+<tr>
+<td>if</td>
+<td align="center">int</td>
+<td align="center">long</td>
+<td align="center">register</td>
+<td align="center">return</td>
+</tr>
+<tr>
+<td>short</td>
+<td align="center">signed</td>
+<td align="center">sizeof</td>
+<td align="center">static</td>
+<td align="center">struct</td>
+</tr>
+<tr>
+<td>switch</td>
+<td align="center">typedef</td>
+<td align="center">unsigned</td>
+<td align="center">union</td>
+<td align="center">void</td>
+</tr>
+<tr>
+<td>volatile</td>
+<td align="center">while</td>
+<td align="center">_Bool</td>
+<td align="center">_Complex</td>
+<td align="center">_Imaginary</td>
+</tr>
+<tr>
+<td>inline</td>
+<td align="center">restrict</td>
+<td align="center">_Alignas</td>
+<td align="center">_Alignof</td>
+<td align="center">_Atomic</td>
+</tr>
+<tr>
+<td>_Generic</td>
+<td align="center">_Static_assert</td>
+<td align="center">_Thread_local</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>常量是在程序执行期间不会改变的量。常量可以是任何的基本数据类型，比如整数常量、浮点常量、字符常量，或字符串字面值，也有枚举常量。<br>常量就像是常规的变量，只不过常量的值在定义后不能进行修改。<br>::: tip 规则</p>
+<ol>
+<li>整数常量，整数常量可以是十进制、八进制或十六进制的常量。</li>
+<li>浮点常量，浮点常量由整数部分、小数点、小数部分和指数部分组成。</li>
+<li>字符常量，字符常量是括在单引号中。</li>
+<li>字符串常量，字符串字面值或常量是括在双引号 “” 中的。<br>:::<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="number">15</span>);<span class="comment">//整型常量</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%f\n&quot;</span>,<span class="number">15.4</span>);<span class="comment">//浮点型常量</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>,<span class="string">&#x27;A&#x27;</span>);<span class="comment">//字符常量</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;SpringSongs\n&quot;</span>);<span class="comment">//字符串常量</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="常量的定义"><a href="#常量的定义" class="headerlink" title="常量的定义"></a>常量的定义</h3>常量的声明与变量的声明类似，不同之处在于常量之前带有const关键字，并且您始终需要指定一个值。通常将常量声明为大写。<br>像这样：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> NUM=<span class="number">45</span>;</span><br></pre></td></tr></table></figure>
+定义常量的另一种方法是使用以下语法：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> AGE 37</span></span><br></pre></td></tr></table></figure>
+在这种情况下，您不需要添加类型，也不需要&#x3D;等号，并且最后省略了分号。<h2 id="转义符"><a href="#转义符" class="headerlink" title="转义符"></a>转义符</h2><table>
+<thead>
+<tr>
+<th>转义符</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\\</td>
+<td align="center">\ 字符</td>
+</tr>
+<tr>
+<td>\‘</td>
+<td align="center">‘ 字符</td>
+</tr>
+<tr>
+<td>\“</td>
+<td align="center">“ 字符</td>
+</tr>
+<tr>
+<td>\?</td>
+<td align="center">? 字符</td>
+</tr>
+<tr>
+<td>\a</td>
+<td align="center">警报铃声</td>
+</tr>
+<tr>
+<td>\b</td>
+<td align="center">退格键</td>
+</tr>
+<tr>
+<td>\f</td>
+<td align="center">换页符</td>
+</tr>
+<tr>
+<td>\n</td>
+<td align="center">换行符</td>
+</tr>
+<tr>
+<td>\r</td>
+<td align="center">回车</td>
+</tr>
+<tr>
+<td>\t</td>
+<td align="center">水平制表符</td>
+</tr>
+<tr>
+<td>\v</td>
+<td align="center">垂直制表符</td>
+</tr>
+<tr>
+<td>\ooo</td>
+<td align="center">一到三位的八进制数</td>
+</tr>
+</tbody></table>
+<h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2>在二元运算中如果有两个操作数具有不同的数据类型，那么在进行运算之前，会把“低类型”提高为“高类型”，运算的结果保存为“高类型”。<br>一般来说可以用以下规则：</li>
+<li>如果有一个操作数为double类型，则另一操作数则自动转为double类型</li>
+<li>如果有一个操作数为float类型，则另一操作数则自动转为float类型</li>
+<li>如果有一操作数为long类型,则另一操作数则自动转为long类型</li>
+<li>char 和 short 参与运算时，必须先转换成 int 类型。<br>::: danger<br>注意，只能以“低类型”提高为“高类型”，不能“高类型”转为“低类型”。也就是说字节短的转为字节长的，不能字节长的转为字节短的。<br>:::<h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2>在强制转换中如果高精度数据类型转为低精度类型则失去精度。<h2 id="运算符号"><a href="#运算符号" class="headerlink" title="运算符号"></a>运算符号</h2>C 语言内置了丰富的运算符，并提供了以下类型的运算符：<br>::: tip</li>
+<li>算术运算符</li>
+<li>关系运算符</li>
+<li>逻辑运算符</li>
+<li>位运算符</li>
+<li>赋值运算符</li>
+<li>杂项运算符<br>:::<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3>下表显示了 C 语言支持的所有算术运算符。假设变量 A 的值为 10，变量 B 的值为 20，则：<table>
+<thead>
+<tr>
+<th>名称</th>
+<th align="center">运算符号</th>
+<th align="center">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>加法运算</td>
+<td align="center">+</td>
+<td align="center">A + B 将得到 30</td>
+</tr>
+<tr>
+<td>减法运算</td>
+<td align="center">-</td>
+<td align="center">A - B 将得到 -10</td>
+</tr>
+<tr>
+<td>乘法运算</td>
+<td align="center">*</td>
+<td align="center">A * B 将得到 200</td>
+</tr>
+<tr>
+<td>除法运算</td>
+<td align="center">&#x2F;</td>
+<td align="center">B &#x2F; A 将得到 2</td>
+</tr>
+<tr>
+<td>取模运算</td>
+<td align="center">%</td>
+<td align="center">B % A 将得到 0</td>
+</tr>
+<tr>
+<td>自增运算</td>
+<td align="center">++</td>
+<td align="center">A++ 将得到 11</td>
+</tr>
+<tr>
+<td>自减运算</td>
+<td align="center">–</td>
+<td align="center">A– 将得到 9</td>
+</tr>
+</tbody></table>
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3>下表显示了 C 语言支持的所有关系运算符。假设变量 A 的值为 10，变量 B 的值为 20，则：<table>
+<thead>
+<tr>
+<th>名称</th>
+<th align="center">运算符号</th>
+<th align="center">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x3D;&#x3D;</td>
+<td align="center">检查两个操作数的值是否相等，如果相等则条件为真。</td>
+<td align="center">(A &#x3D;&#x3D; B) 为假。</td>
+</tr>
+<tr>
+<td>!&#x3D;</td>
+<td align="center">检查两个操作数的值是否相等，如果不相等则条件为真。</td>
+<td align="center">(A !&#x3D; B) 为真。</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td align="center">检查左操作数的值是否大于右操作数的值，如果是则条件为真。</td>
+<td align="center">(A &gt; B) 为假。</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td align="center">检查左操作数的值是否小于右操作数的值，如果是则条件为真。</td>
+<td align="center">(A &lt; B) 为真。</td>
+</tr>
+<tr>
+<td>&gt;&#x3D;</td>
+<td align="center">检查左操作数的值是否大于或等于右操作数的值，如果是则条件为真。</td>
+<td align="center">(A &gt;&#x3D; B) 为假。</td>
+</tr>
+<tr>
+<td>&lt;&#x3D;</td>
+<td align="center">检查左操作数的值是否小于或等于右操作数的值，如果是则条件为真。</td>
+<td align="center">(A &lt;&#x3D; B) 为真。</td>
+</tr>
+</tbody></table>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3>下表显示了 C 语言支持的所有关系逻辑运算符。假设变量 A 的值为 1，变量 B 的值为 0，则：<table>
+<thead>
+<tr>
+<th>运算符号</th>
+<th align="center">描述</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;&amp;</td>
+<td align="center">称为逻辑与运算符。如果两个操作数都非零，则条件为真。</td>
+<td align="center">(A &amp;&amp; B) 为假。</td>
+</tr>
+<tr>
+<td>||</td>
+<td align="center">称为逻辑或运算符。如果两个操作数中有任意一个非零，则条件为真。</td>
+<td align="center">(A || B) 为真。</td>
+</tr>
+<tr>
+<td>!</td>
+<td align="center">称为逻辑非运算符。用来逆转操作数的逻辑状态。如果条件为真则逻辑非运算符将使其为假。</td>
+<td align="center">!(A &amp;&amp; B) 为真。</td>
+</tr>
+</tbody></table>
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3>位运算符作用于位，并逐位执行操作。&amp;、 | 和 ^ 的真值表如下所示：<table>
+<thead>
+<tr>
+<th>A</th>
+<th align="center">B</th>
+<th align="center">A&amp;B</th>
+<th align="center">A|B</th>
+<th align="center">A^B</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td>0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td>1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td>1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th align="center">运算符号</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>赋值</td>
+<td align="center">+&#x3D;</td>
+<td align="center">把右边操作数的值赋给左边操作数</td>
+</tr>
+<tr>
+<td>加赋值</td>
+<td align="center">+&#x3D;</td>
+<td align="center">把右边操作数加上左边操作数的结果赋值给左边操作数</td>
+</tr>
+<tr>
+<td>减赋值</td>
+<td align="center">-&#x3D;</td>
+<td align="center">把左边操作数减去右边操作数的结果赋值给左边操作数</td>
+</tr>
+<tr>
+<td>乘赋值</td>
+<td align="center">*&#x3D;</td>
+<td align="center">把右边操作数乘以左边操作数的结果赋值给左边操作数</td>
+</tr>
+<tr>
+<td>除赋值</td>
+<td align="center">&#x2F;&#x3D;</td>
+<td align="center">把左边操作数除以右边操作数的结果赋值给左边操作数</td>
+</tr>
+<tr>
+<td>取余赋值</td>
+<td align="center">%&#x3D;</td>
+<td align="center">求两个操作数的模赋值给左边操作数</td>
+</tr>
+<tr>
+<td>左移且赋值运算符</td>
+<td align="center">&lt;&lt;&#x3D;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>右移且赋值运算符</td>
+<td align="center">&gt;&gt;&#x3D;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>按位与且赋值运算符</td>
+<td align="center">&amp;&#x3D;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>按位异或且赋值运算符</td>
+<td align="center">^&#x3D;</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>按位或且赋值运算符</td>
+<td align="center">|&#x3D;</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="分支结构之简单if语句"><a href="#分支结构之简单if语句" class="headerlink" title="分支结构之简单if语句"></a>分支结构之简单if语句</h2><p>if语句用于条件判定，语句执行时，会先计算条件表达式的值，如果值为真，则执行语句块。<br>::: tip 语法：<br>    if (条件表达式) {<br>        语句块;<br>    }<br>:::</p>
+<h4 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> grade=<span class="number">70</span>;</span><br><span class="line">    <span class="keyword">if</span> (grade&gt;<span class="number">60</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;passed&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实例执行流程图如下：<br><img src="/attachment/C/ifcontroller.jpg" alt="SpringSongs：分支结构之简单if语句"></p>
+<h2 id="分支结构之简单if-else语句"><a href="#分支结构之简单if-else语句" class="headerlink" title="分支结构之简单if-else语句"></a>分支结构之简单if-else语句</h2><p>if语句用于条件判定，语句执行时，会先计算条件表达式的值，如果值为真，则执行语句块1。如果真为假执行语句块2。<br>::: tip 语法：<br>    if (表达式) {<br>        语句块1;<br>    } else {<br>        语句块2;<br>    }<br>:::</p>
+<h4 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> grade = <span class="number">50</span>;</span><br><span class="line">    <span class="keyword">if</span> (grade &gt; <span class="number">60</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;passed&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;faild&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实例执行流程图如下：<br><img src="/attachment/C/ifelsecontroller.jpg" alt="SpringSongs：分支结构之简单if-else语句"></p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h2 id="分支结构之多重if-else语句"><a href="#分支结构之多重if-else语句" class="headerlink" title="分支结构之多重if-else语句"></a>分支结构之多重if-else语句</h2><p>这种if语句用于多路条件判定。其中的各个表达式将会进行运算，如果条件表达式的值为真，则执行生相应语句块。<br>最后的else是当以上条件都不成立的情况下默认执行语句块。<br>::: tip 语法：<br>    if(表达式1) {<br>        语句块1;<br>    } else if(表达式2) {<br>        语句块2;<br>    …<br>    } else if(表达式n) {<br>        语句块n;<br>    } else {<br>        语句块n+1;<br>    }<br>:::</p>
+<h4 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> grade=<span class="number">88</span>;</span><br><span class="line">    <span class="keyword">if</span> (grade&gt;=<span class="number">90</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;A&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (grade&gt;=<span class="number">80</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (grade&gt;=<span class="number">70</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;C&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (grade&gt;=<span class="number">60</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;D&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">&quot;E&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="分支结构之嵌套if-else语句"><a href="#分支结构之嵌套if-else语句" class="headerlink" title="分支结构之嵌套if-else语句"></a>分支结构之嵌套if-else语句</h2><p>它的一般形式如下<br>::: tip 语法：<br>    if (表达式1) {<br>        if (表达式2) {<br>            语句块1;<br>        } else {<br>            语句块2;<br>        }<br>    } else {<br>        语句块3;<br>    }<br>:::</p>
+<h2 id="分支结构之switch语句"><a href="#分支结构之switch语句" class="headerlink" title="分支结构之switch语句"></a>分支结构之switch语句</h2><p>有时侯当我们有多个分支选择时，可以使用if else … else if语句来写，但有时侯使用switch更方便。<br>::: tip 语法：<br>    switch(表达式) {<br>        case 值1:<br>            语句块1;<br>            break;<br>        case 值2:<br>            语句块2;<br>            break;<br>        …<br>        case 值n:<br>            语句块n;<br>            break;<br>        default:<br>            语句块n+1;<br>        break;<br>    }<br>:::</p>
+<h4 id="实例-5"><a href="#实例-5" class="headerlink" title="实例"></a>实例</h4> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> day=<span class="number">3</span>;</span><br><span class="line">    <span class="keyword">switch</span> (day)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;星期一&quot;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;星期二&quot;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;星期三&quot;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;星期四&quot;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;星期五&quot;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;星期六&quot;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;星期天&quot;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="实例执行流程图如下："><a href="#实例执行流程图如下：" class="headerlink" title="实例执行流程图如下："></a>实例执行流程图如下：</h4><p><img src="/attachment/C/muifelsecontroller.jpg" alt="SpringSongs：分支结构之简单if-else语句"></p>
+<p>::: danger 提示</p>
+<ol>
+<li>在case后的各常量表达式的值不能相同，否则会出现错误。</li>
+<li>在case子句后如果没有break;会一直往后执行一直到遇到break;才会离开switch语句。</li>
+<li>switch后面的表达式语句只能是整型或者字符类型。</li>
+<li>在case后，允许有多个语句，可以不用{}括起来。</li>
+<li>各case和default子句的先后顺序可以变动，而不会影响程序执行结果。</li>
+<li>default子句可以省略不用。<br>:::</li>
+</ol>
+<h2 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h2><p>执行过程是：先判断表达式1的值是否为真，如果是真的话执行表达式2；如果是假的话执行表达式3。可以用来替代 if…else 语句。<br>::: tip 语法：<br>    表达式1 ? 表达式2 : 表达式3;<br>:::</p>
+<h3 id="实例-6"><a href="#实例-6" class="headerlink" title="实例"></a>实例</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> a=<span class="number">10</span>,b=<span class="number">15</span>;</span><br><span class="line">    a&gt;b?<span class="built_in">printf</span>(<span class="string">&quot;a&gt;b&quot;</span>):<span class="built_in">printf</span>(<span class="string">&quot;a&lt;b&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="循环结构之while循环"><a href="#循环结构之while循环" class="headerlink" title="循环结构之while循环"></a>循环结构之while循环</h2><p>程序先执行条件表达式，如果值为真，继续执行语句块。然后保持继续执行条件表式与语句块，直到条件表达式为假，终止循环。<br>::: tip 语法：<br>    while(条件表达式) {<br>        语句块;<br>    }<br>:::</p>
+<h4 id="实例-7"><a href="#实例-7" class="headerlink" title="实例"></a>实例</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> count=<span class="number">10</span>;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;count)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;i=%d&quot;</span>,i);</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="实例执行流程图如下"><a href="#实例执行流程图如下" class="headerlink" title="实例执行流程图如下"></a>实例执行流程图如下</h4><p><img src="/attachment/C/whilecontroller.jpg" alt="SpringSongs：循环结构之while循环"></p>
+<h2 id="循环结构之do-while循环"><a href="#循环结构之do-while循环" class="headerlink" title="循环结构之do-while循环"></a>循环结构之do-while循环</h2><p>while循环和for循环都是在执行条件表达式以后，如果为真则行语句块。所以有可能根本不会执行到语句块。在C语言中还有先执行语句块，再<br>校验表达式的循环，这保证至少执行循环体内语句块一次。这种循环被称为do-while循环。<br>::: tip 语法：<br>    do {<br>        语句块;<br>    }while(条件表达式);<br>:::</p>
+<h4 id="实例-8"><a href="#实例-8" class="headerlink" title="实例"></a>实例</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> count=<span class="number">10</span>;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;i=%d&quot;</span>,i);</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;<span class="keyword">while</span>(i&lt;count);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="实例执行流程图如下-1"><a href="#实例执行流程图如下-1" class="headerlink" title="实例执行流程图如下"></a>实例执行流程图如下</h4><p><img src="/attachment/C/dowhilecontroller.jpg" alt="SpringSongs：循环结构之do-while循环"></p>
+<h2 id="循环结构之for循环"><a href="#循环结构之for循环" class="headerlink" title="循环结构之for循环"></a>循环结构之for循环</h2><p>for也和while一样能够执行循环体。<br>::: tip 语法：<br>    for(条件表达式1;条件表达式2;条件表达式3) {<br>        语句块;<br>    }<br>:::</p>
+<h4 id="实例-9"><a href="#实例-9" class="headerlink" title="实例"></a>实例</h4> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="实例执行流程图如下-2"><a href="#实例执行流程图如下-2" class="headerlink" title="实例执行流程图如下"></a>实例执行流程图如下</h4><p><img src="/attachment/C/forcontroller.jpg" alt="SpringSongs：循环结构之for循环"><br>::: warning</p>
+<ol>
+<li>条件表达式1。</li>
+<li>再执行条件表达式2，如果运算结果值为真，则执行语句块，否则结束循环。</li>
+<li>再执行条件表达式3。</li>
+<li>重复执行第2和3步，直至条件表达式2为假，退出循环。</li>
+<li>第1步仅在程序第一次执行循环体时执行。<br>:::<h2 id="循环结构之多重循环"><a href="#循环结构之多重循环" class="headerlink" title="循环结构之多重循环"></a>循环结构之多重循环</h2>一般形式如下：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(条件表达式<span class="number">1</span>) &#123;		<span class="keyword">while</span>(条件表达式<span class="number">2</span>) &#123;</span><br><span class="line">			<span class="keyword">while</span>(条件表达式<span class="number">3</span>) &#123;</span><br><span class="line">				语句块;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;	<span class="keyword">do</span> &#123;</span><br><span class="line">		<span class="keyword">do</span> &#123;</span><br><span class="line">			语句块;</span><br><span class="line">		&#125;<span class="keyword">while</span>(条件表达式<span class="number">1</span>);</span><br><span class="line">	&#125;<span class="keyword">while</span>(条件表达式<span class="number">2</span>);&#125;<span class="keyword">while</span>(条件表达式<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(条件表达式<span class="number">1</span>;条件表达式<span class="number">2</span>;条件表达式<span class="number">3</span>) &#123;	<span class="keyword">for</span>(条件表达式<span class="number">4</span>;条件表达式<span class="number">5</span>;条件表达式<span class="number">6</span>) &#123;</span><br><span class="line">		<span class="keyword">for</span>(条件表达式<span class="number">7</span>;条件表达式<span class="number">8</span>;条件表达式<span class="number">9</span>) &#123;</span><br><span class="line">			语句块;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="结束语句之break语句"><a href="#结束语句之break语句" class="headerlink" title="结束语句之break语句"></a>结束语句之break语句</h2>break能中断循环结构，而执行整个循环语句后面的代码。当中断条件满足时，会终止循环。如果内嵌循环内中断，则中断内嵌循环体。<h4 id="实例一"><a href="#实例一" class="headerlink" title="实例一"></a>实例一</h4> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">       <span class="keyword">if</span> (i==<span class="number">5</span>)&#123;<span class="comment">//假如i等于5会中断循环体,跳到return语句。</span></span><br><span class="line">           <span class="keyword">break</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,i);</span><br><span class="line">   &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出 01234</span></span><br></pre></td></tr></table></figure>
+<h4 id="实例二"><a href="#实例二" class="headerlink" title="实例二"></a>实例二</h4> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (j == <span class="number">5</span>)</span><br><span class="line">            &#123; <span class="comment">//假如j等于5会中断循环体,跳到上一层for语句继续执行循环体。</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出 00000111112222233333444445555566666777778888899999</span></span><br></pre></td></tr></table></figure>
+<h2 id="结束语句之continue语句"><a href="#结束语句之continue语句" class="headerlink" title="结束语句之continue语句"></a>结束语句之continue语句</h2>continue也能中断循环结构，但它和break不同的是，contine只跳过本次循环，继续执行后面的循环。如果内嵌循环内中断，则只跳过内嵌循环体本次循环。<h4 id="实例一-1"><a href="#实例一-1" class="headerlink" title="实例一"></a>实例一</h4> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (i==<span class="number">5</span>)<span class="keyword">continue</span>;<span class="comment">//假如i等于5跳过本次循环</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出 012346789</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="臭名远扬之goto语句"><a href="#臭名远扬之goto语句" class="headerlink" title="臭名远扬之goto语句"></a>臭名远扬之goto语句</h2><p>goto 语句允许把控制无条件转移到同一函数内的被标记的语句。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">    LOOP:<span class="keyword">if</span> (i&lt;<span class="number">10</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,i);</span><br><span class="line">        i++;</span><br><span class="line">        <span class="keyword">goto</span> LOOP;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>::: danger 提示<br>在任何编程语言中，都不建议使用 goto 语句。因为它使得程序的控制流难以跟踪，使程序难以理解和难以修改。<br>:::</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.springsongs.cn/2008/01/20/c-language-base/" data-id="cl1xj8u2v0009omu6dcpm8kzv" data-title="C语言基础-基础入门" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" rel="tag">C语言基础</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2008/01/29/c-language-array/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C语言基础-数组
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">C语言基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">Java高并发编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" rel="tag">C语言基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" rel="tag">Java高并发编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C语言基础</a> <a href="/tags/Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">Java高并发编程</a> <a href="/tags/Spring/" style="font-size: 20px;">Spring</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02/">February 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01/">January 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/01/11/java-thread-4/">如何确保线程的执行顺序</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/08/iava-thread-3/">线程的执行顺序</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/05/java-thread-2/">线程的生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/01/%20java-thread-1/">线程的实现方式</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/25/spring-base-7/">Spring 依赖注入之自动注入</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 SpringSongs<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>C语言基础-函数 | 极光之歌</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="自定义函数函数是一组语句，这些语句接受输入，进行一些特定的计算并产生输出。是将一些通常或重复完成的任务放在一起，组成一个函数，这样我们就可以调用函数，而不是为不同的输入一次又一次地编写相同的代码。 自定义函数的一般格式如下：1DataType function_name ( [arg_type arg1, ..., arg_type argN])&amp;#123;body&amp;#125; ::: tip 提">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言基础-函数">
+<meta property="og:url" content="https://www.springsongs.cn/2008/02/08/c-language-function/index.html">
+<meta property="og:site_name" content="极光之歌">
+<meta property="og:description" content="自定义函数函数是一组语句，这些语句接受输入，进行一些特定的计算并产生输出。是将一些通常或重复完成的任务放在一起，组成一个函数，这样我们就可以调用函数，而不是为不同的输入一次又一次地编写相同的代码。 自定义函数的一般格式如下：1DataType function_name ( [arg_type arg1, ..., arg_type argN])&amp;#123;body&amp;#125; ::: tip 提">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2008-02-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-16T11:08:01.497Z">
+<meta property="article:author" content="SpringSongs">
+<meta property="article:tag" content="C语言基础">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="极光之歌" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">极光之歌</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://www.springsongs.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-c-language-function" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2008/02/08/c-language-function/" class="article-date">
+  <time class="dt-published" datetime="2008-02-07T16:00:00.000Z" itemprop="datePublished">2008-02-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">C语言基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      C语言基础-函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><p>函数是一组语句，这些语句接受输入，进行一些特定的计算并产生输出。是将一些通常或重复完成的任务放在一起，组成一个函数，这样我们就可以调用函数，而不是为不同的输入一次又一次地编写相同的代码。</p>
+<h4 id="自定义函数的一般格式如下："><a href="#自定义函数的一般格式如下：" class="headerlink" title="自定义函数的一般格式如下："></a>自定义函数的一般格式如下：</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataType <span class="title function_">function_name</span> <span class="params">( [arg_type arg1, ..., arg_type argN])</span>&#123;body&#125;</span><br></pre></td></tr></table></figure>
+<p>::: tip 提示</p>
+<ol>
+<li>return-type表示函数返回的数据类型。如果函数没有返回值，则可以void在函数名称之前使用关键字。否则，您将指定函数返回值类型（int对于整数，float对于浮点值，const char *对于字符串等）。</li>
+<li>function_name表示函数的名称，命名规则和标识符相同。</li>
+<li>[]表示可以省略。参数省略表示该函数是无参函数，参数不省略表示该函数是有参函数;<br>一个函数可以有参数。它们是可选的。如果没有它们，则在括号内插入void也可以什么都不用写，如下所示：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">doSomething</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">   <span class="comment">/* ... */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">doSomething</span><span class="params">()</span> &#123;</span><br><span class="line">   <span class="comment">/* ... */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在这种情况下，当我们调用该函数时，将在括号内不加任何名称的情况下调用该函数：</span></span><br><span class="line">doSomething();</span><br></pre></td></tr></table></figure>
+如果有一个参数，则指定参数的类型和名称，如下所示：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">doSomething</span><span class="params">(<span class="type">int</span> value)</span> &#123;</span><br><span class="line">   <span class="comment">/* ... */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用函数时，将在括号中传递该参数，如下所示：</span></span><br><span class="line">doSomething(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+或者多个参数，如下所示：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">doSomething</span><span class="params">(<span class="type">int</span> value1,<span class="type">int</span> value2)</span> &#123;</span><br><span class="line">   <span class="comment">/* ... */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用函数时，将在括号中传递该参数，如下所示：</span></span><br><span class="line">doSomething(<span class="number">3</span>,<span class="number">4</span>);</span><br></pre></td></tr></table></figure></li>
+<li>自定义函数一般放在main()方法的上面，如果需要放在上面，则需要在main()前先声明自定义函数。定义格式为<br><code>return-type function_name ( [arg_type arg1, ..., arg_type argN]);</code><br>:::<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">max</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span>;<span class="comment">//声明自定义函数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> <span class="type">const</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> result=max(<span class="number">10</span>,<span class="number">15</span>);<span class="comment">//调用自定义函数</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;result=%d&quot;</span>,result);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//自定义函数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">max</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a&gt;b)&#123;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="标准库函数和自定义函数"><a href="#标准库函数和自定义函数" class="headerlink" title="标准库函数和自定义函数"></a>标准库函数和自定义函数</h2><p>C语言已经为我们封装好了很多函数，比如<code>stdio.h</code>提供输出函数，使用函数时引入对应的头文件即可。C语言自带的函数称为标准库函数（Library Function）。</p>
+<h2 id="形参和实参的区别"><a href="#形参和实参的区别" class="headerlink" title="形参和实参的区别"></a>形参和实参的区别</h2><p>函数的参数分为形参和实参两种：</p>
+<ol>
+<li>形参是在定义函数名和函数体的时候使用的参数,目的是用来接收调用该函数时传入的参数,称为形式参数，简称形参。</li>
+<li>实参是在调用时传递该函数的参数，称为实际参数，简称实参。</li>
+</ol>
+<p>函数的形参和实参具有以下特点：</p>
+<ol>
+<li>形参变量只有在函数被调用时才会分配内存，调用结束后，立刻释放内存，所以形参变量只有在函数内部有效，不能在函数外部使用。</li>
+<li>实参可以是常量、变量、表达式、函数等，无论实参是何种类型的数据，在进行函数调用时，它们都必须有确定的值，以便把这些值传送给形参，所以应该提前用赋值、输入等办法使实参获得确定值。</li>
+<li>实参和形参在数量上、类型上、顺序上必须严格一致，否则会发生“类型不匹配”的错误。</li>
+</ol>
+<h2 id="全局变量和局部变量"><a href="#全局变量和局部变量" class="headerlink" title="全局变量和局部变量"></a>全局变量和局部变量</h2><ol>
+<li>局部变量也称为内部变量。局部变量是在函数内作定义说明的。其作用域仅限于函数内， 离开该函数后再使用这种变量是非法的。在复合语句中也可定义变量，其作用域只在复合语句范围内。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">doSomeThing</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="type">int</span> a;<span class="comment">//局部变量,仅在doSomeThing内有效</span></span><br><span class="line">	<span class="type">int</span> b;<span class="comment">//局部变量,仅在doSomeThing内有效</span></span><br><span class="line">	<span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="type">int</span> a;<span class="comment">//局部变量,仅在main内有效</span></span><br><span class="line">	<span class="type">int</span> b;<span class="comment">//局部变量,仅在main内有效</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>全局变量也称为外部变量，它是在函数外部定义的变量。它不属于哪一个函数，它属于一个源程序文件。其作用域是整个源程序。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a,b;<span class="comment">//全局变量</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">doSomeThing1</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="comment">/* ... */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> i,j;<span class="comment">//全局变量</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">doSomeThing2</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="comment">/* ... */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="comment">/* ... */</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.springsongs.cn/2008/02/08/c-language-function/" data-id="cl1xj8u55000comu6fdvf9vq9" data-title="C语言基础-函数" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" rel="tag">C语言基础</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2008/02/09/c-language-define/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C语言基础-预处理命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2008/01/29/c-language-array/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C语言基础-数组</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">C语言基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">Java高并发编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" rel="tag">C语言基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" rel="tag">Java高并发编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">C语言基础</a> <a href="/tags/Java%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">Java高并发编程</a> <a href="/tags/Spring/" style="font-size: 20px;">Spring</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02/">February 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01/">January 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/01/11/java-thread-4/">如何确保线程的执行顺序</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/08/iava-thread-3/">线程的执行顺序</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/05/java-thread-2/">线程的生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/01/%20java-thread-1/">线程的实现方式</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/25/spring-base-7/">Spring 依赖注入之自动注入</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 SpringSongs<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
